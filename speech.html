@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text to Speech</title>
+</head>
+<body>
+  <input type="text" id="text-input" placeholder="Enter text">
+  <button onclick="speakText()">Speak</button>
+
+  <script>
+    function speakText() {
+      const textInput = document.getElementById("text-input");
+      const text = textInput.value;
+
+      if (text === "") {
+        alert("Please enter some text to speak.");
+        return;
+      }
+
+      const synth = window.speechSynthesis;
+      const utterance = new SpeechSynthesisUtterance(text);
+
+      synth.speak(utterance);
+    }
+  </script>
+</body>
+</html>
